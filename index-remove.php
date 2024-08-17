@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio - Ankit Verma</title>
+  <title>PHP File My Portfolio - Ankit Verma</title>
   <meta content="Ankit Verma" name="description">
   <meta content="Ankit Verma" name="keywords">
 
@@ -26,7 +26,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -67,9 +66,6 @@
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-        <li><a href="chat"><i class="bi bi-chat navicon"></i> Chat</a></li>
         <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="#">Dropdown 1</a></li>
@@ -87,6 +83,7 @@
             <li><a href="#">Dropdown 4</a></li>
           </ul>
         </li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
 
@@ -146,6 +143,10 @@
                 </ul>
               </div>
             </div>
+            <p class="py-3">
+              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
+              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
+            </p>
           </div>
         </div>
 
@@ -171,8 +172,8 @@
           <div class="col-lg-3 col-md-6">
             <div class="stats-item">
               <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>+ Projects</strong></p>
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
             </div>
           </div><!-- End Stats Item -->
 
@@ -211,34 +212,56 @@
 
         <div class="row skills-content skills-animation">
 
-          <div class="col-md-6">
+          <div class="col-lg-6">
 
             <div class="progress">
-              <span class="skill">HTML <i class="val">100%</i></span>
+              <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div>
-          </div>
+            </div><!-- End Skills Item -->
 
-          <div class="col-md-6">
             <div class="progress">
-              <span class="skill">CSS <i class="val">90%</i></span>
+              <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div> 
-          </div>
-          
-          <div class="col-md-6">
+            </div><!-- End Skills Item -->
+
             <div class="progress">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
+              <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div>
+            </div><!-- End Skills Item -->
+
           </div>
-          
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>PHP</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>WordPress/CMS</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
         </div>
 
       </div>
@@ -273,21 +296,17 @@
 
             <h3 class="resume-title">Education</h3>
             <div class="resume-item">
-              <h4>Diploma in PHP</h4>
-              <h5>2017 - 2018</h5>
-              <p><em>Betaue Technologies & /Placement Services, Kanpur</em></p>
+              <h4>Master of Fine Arts &amp; Graphic Design</h4>
+              <h5>2015 - 2016</h5>
+              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+              <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
             </div><!-- Edn Resume Item -->
 
             <div class="resume-item">
-              <h4>BSc Mathematics</h4>
-              <h5>2017</h5>
-              <p><em>Chhatrapati Shahu Ji Maharaj University, Kanpur</em></p>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Intermediate</h4>
-              <h5>2013</h5>
-              <p><em>Guru Nanak Inter College, Lakhimpir Kheri</em></p>
+              <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
+              <h5>2010 - 2014</h5>
+              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+              <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
             </div><!-- Edn Resume Item -->
 
           </div>
@@ -296,43 +315,27 @@
             <h3 class="resume-title">Professional Experience</h3>
             <div class="resume-item">
               <h4>Software Engineer</h4>
-              <h5>Mar 2023 - Present <small><span class="text-muted">(1 yr 3 mos)</span></small></h5>
-              <p class="mb-0"><em>Ommune IT Solutions Pvt. Ltd.</em></p>
-              <p><em>Lucknow, Uttar Pradesh, India</em></p>
-              <ul>
-                <li>Developed and maintained web applications using PHP, JavaScript, and related technologies.</li>
-                <li>Implemented and optimized database solutions using MySQL and MSSQL. </li>
-                <li>Collaborated with front-end developers to enhance user experience and functionality.</li>
-                <li>Integrated third-party APIs including WhatsApp Cloud API to extend application capabilities.</li>
-                <li>Led and mentored junior developers, providing guidance and code reviews.</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Software Engineer</h4>
               <h5>Feb 2022 - Mar 2023 <small><span class="text-muted">(1 yr 2 mos)</span></small></h5>
-              <p class="mb-0"><em>Dataman Computer Systems (P) Ltd.</em></p>
+              <p><em>Dataman Computer Systems (P) Ltd.</em></p>
               <p><em>Kanpur, Uttar Pradesh, India</em></p>
               <ul>
-                <li>Developed and maintained web applications using PHP, JavaScript, and related technologies.</li>
-                <li>Implemented and optimized database solutions using MySQL and MSSQL. </li>
-                <li>Collaborated with front-end developers to enhance user experience and functionality.</li>
-                <li>Integrated third-party APIs including WhatsApp Cloud API to extend application capabilities.</li>
-                <li>Led and mentored junior developers, providing guidance and code reviews.</li>
+                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
+                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
+                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
+                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
               </ul>
             </div><!-- Edn Resume Item -->
 
             <div class="resume-item">
               <h4>Software Engineer</h4>
               <h5>May 2018 - Feb 2022 <small><span class="text-muted">(3 yrs 10 mos)</span></small></h5>
-              <p class="mb-0"><em>Business Quest Technology</em></p>
+              <p><em>Business Quest Technology</em></p>
               <p><em>Kanpur, Uttar Pradesh, India</em></p>
               <ul>
-                <li>Designed and developed web applications using CodeIgniter frameworks..</li>
-                <li>Ensured responsive design implementation using Bootstrap and CSS.</li>
-                <li>Utilized Firebase for backend services and real-time data management.</li>
-                <li>Conducted thorough testing and debugging to ensure application stability and performance.</li>
-                <li>Worked closely with clients to gather requirements and deliver custom solutions.</li>
+                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
+                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
               </ul>
             </div><!-- Edn Resume Item -->
 
@@ -343,70 +346,6 @@
       </div>
 
     </section><!-- /Resume Section -->
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects section light-background">
-      <!-- Section Title -->
-      <div class="container section-title pb-2" data-aos="fade-up">
-        <h2>Projects</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <ul>
-              <li class="project-item">
-                <div class="project-name">  
-                  <h4>Cabsules</h4>
-                </div>
-                <div class="project-description">
-                  <p class="mb-0">Cabsules is an online cab booking platform. Backend developed using Laravel, MySQL & Firebase also developed api's for mobile app. Lead, Vendor, Driver and Customer management. </p>
-                  <p><a href="https://cabsules.com/">cabsules.com</a>, <a href="https://crm.cabsules.com/">crm.cabsules.com</a></p>
-                </div>
-              </li>
-              <li class="project-item">
-                <div class="project-name">  
-                  <h4>Online Exam Management - Exam & Result Management</h4>
-                </div>
-                <div class="project-description">
-                  <p class="mb-0">
-                    Developed an online test system facilitating users to take tests and receive instant results.
-                    Admin module  includes a dynamic dashboard for managing subjects, questions, students, institutions, and exams.
-                  </p>
-                  <p><a href="https://cabsules.com/">cabsules.com</a>, <a href="https://crm.cabsules.com/">crm.cabsules.com</a></p>
-                </div>
-              </li>
-            </ul>
-            
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- End Projects Section -->
-    <section id="projects" class="projects section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="section-title">
-              <h2>########</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-item">
-              <div class="project-name">
-                <h3>#####</h3>
-              </div>
-              <div class="project-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section light-background">
@@ -888,9 +827,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="data/data.js">
-      // console.log(data);
-  </script>
+
 </body>
 
 </html>
