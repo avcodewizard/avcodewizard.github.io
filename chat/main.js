@@ -75,14 +75,20 @@ function loginUser(user) {
 
 function open_chat() {
     if (window.localStorage.getItem('user')) {
-        alert('You are ready to start chatting with me.');
+        // alert('You are ready to start chatting with me.');
         $('#login').addClass('d-none');
         $('#chat').removeClass('d-none');
     }
     else {
-        alert('Please login first.');
+        // alert('Please login first.');
         $('#login').removeClass('d-none');
         $('#chat').addClass('d-none');
     };
 }
 open_chat();
+
+$('body').on('click','#sign-out',function(e){
+    e.preventDefault();
+    window.localStorage.removeItem('user');
+    window.location.reload();
+})
