@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online JSON Formatter / Beautifier and JSON Validator will format JSON data, and helps to validate, convert JSON to XML, JSON to CSV. Save and Share JSON">
+    <meta name="author" content="Ankit Verma">
+    <meta name="keywords" content="json formatter, json beautifier, json validator, online json formatter, json formatter online, json beautify,beautify json, ,format json, jsonlint, JSON Checker, JSON Cleaner, json converter, json format, json online format, format json online">
+    <meta property="og:title" content="Best JSON Formatter and JSON Validator: Online JSON Formatter" />
+    <meta property="og:description" content="Online JSON Formatter / Beautifier and JSON Validator will format JSON data, and helps to validate, convert JSON to XML, JSON to CSV. Save and Share JSON" />
+    <meta property="og:image" content="https://avcodewizard.github.io/jsonformatter/jsonformatter.png" />
+    <meta property="og:url" content="https://avcodewizard.github.io/jsonformatter" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://avcodewizard.github.io/jsonformatter" />
+    <!-- <link rel="shortcut icon" type="image/png" href="/img/favicon.png" /> -->
+    <title>Best JSON Formatter and JSON Validator: Online JSON Formatter | Ankit Verma</title>
+</head> 
+
+<body>
+    <h1>JSON Formatter</h1>
+    <textarea id="jsonInput" placeholder="Enter JSON here..." rows="10" cols="50"></textarea><br>
+    <button onclick="formatJson()">Format JSON</button><br><br>
+    <pre id="formattedJsonOutput"></pre>
+
+    <script>
+        function formatJson() {
+            const jsonInput = document.getElementById('jsonInput').value;
+            try {
+                // Parse the input JSON
+                const parsedJson = JSON.parse(jsonInput);
+                // Format JSON with pretty print
+                const formattedJson = JSON.stringify(parsedJson, null, 4);
+                document.getElementById('formattedJsonOutput').textContent = formattedJson;
+            } catch (error) {
+                document.getElementById('formattedJsonOutput').textContent = 'Invalid JSON: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
