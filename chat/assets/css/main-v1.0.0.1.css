@@ -266,6 +266,7 @@ message-area
   overflow: hidden;
   height: 100%;
   border-left: 1px solid #ccc;
+  padding: 0px 15px;
 }
 
 .chatbox .modal-dialog,

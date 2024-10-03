@@ -6,18 +6,18 @@ const conversationBio = $('.conversation-bio');
 const messageTextInput = $('.message-text-input');
 const sendTextMessageBtn = $('.send-text-message');
 const msgBody = $('.msg-body>ul');
-
+var conversationRef;
 
 const preloader = document.querySelector('#preloader');
 if (preloader) {
-  window.addEventListener('load', () => {
-    preloader.remove();
-  });
+    window.addEventListener('load', () => {
+        preloader.remove();
+    });
 }
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
-import { getDatabase, ref, set, get, child, push } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
+import { getDatabase, ref, set, get, child, push, onValue } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAOgC8M2o5Wz8yl3f1wGQ8p_rUWXujckpw",
@@ -116,7 +116,7 @@ function open_chat() {
 }
 open_chat();
 
-$('body').on('click','.open-conversation',async function(e){
+$('body').on('click', '.open-conversation', async function (e) {
     e.preventDefault();
     let _this = $(this);
     let uid = $(this).data('uid');
@@ -129,7 +129,6 @@ $('body').on('click','.open-conversation',async function(e){
     const conversationRefPath1 = 'conversations/' + sender + '-' + uid;
     const conversationRefPath2 = 'conversations/' + uid + '-' + sender;
 
-    let conversationRef;
     let conversationSnapshot;
     try {
         // Check if the first conversation path exists
@@ -145,49 +144,47 @@ $('body').on('click','.open-conversation',async function(e){
         alert('Something went wrong. Please try again later.');
     }
     conversationSnapshot = conversationSnapshot.val();
-    $.each(conversationSnapshot, (index, val) => {
-        console.log({ index, val })
-        let className = (val.sender === sender) ? 'sender' : 'repaly';
-        let message = val.message;
-        msgBody.append(`<li class="${className}">
-                            <p>${message}</p>
-                            <span class="time">10:35 am</span>
-                        </li>`);
+    // await loadMessages(sender, conversationSnapshot);
+    // msgBody[0].scrollIntoView({ behavior: 'fast', block: 'end' }); 
+
+    
+    onValue(conversationRef, async (snapshot) => {
+        const conversationSnapshot = snapshot.val();
+        await loadMessages(sender, conversationSnapshot);
+        msgBody[0].scrollIntoView({ behavior: 'instant', block: 'end' });
+        //scroll ul to Bottom
+        // msgBody.scrollTo(msgBody[0].scrollHeight);
     })
-    // conversationSnapshot.each((val,index) => {
-    //     console.log({index,val})
-    // })      
 })
 
 sendTextMessageBtn.on('click', async function (e) {
     e.preventDefault();
-    
+
     const uid = messageTextInput.data('uid');
     const sender = JSON.parse(window.localStorage.getItem('user')).uid;
     const message = messageTextInput.val();
 
     // Define potential conversation references
-    const conversationRefPath1 = 'conversations/' + sender + '-' + uid;
-    const conversationRefPath2 = 'conversations/' + uid + '-' + sender;
-    
-    let conversationRef;
+    // const conversationRefPath1 = 'conversations/' + sender + '-' + uid;
+    // const conversationRefPath2 = 'conversations/' + uid + '-' + sender;
+
+    // let conversationRef;
     let conversationRefPath;
     try {
         // Check if the first conversation path exists
-        conversationRef = ref(database, conversationRefPath1);
-        let conversationSnapshot = await get(conversationRef);
-        conversationRefPath = conversationRefPath1;
-        // If it does not exist, check the second path
-        if (!conversationSnapshot.exists()) {
-            conversationRef = ref(database, conversationRefPath2);
-            conversationRefPath = conversationRefPath2;
-        }
+        // conversationRef = ref(database, conversationRefPath1);
+        // let conversationSnapshot = await get(conversationRef);
+        // conversationRefPath = conversationRefPath1;
+        // // If it does not exist, check the second path
+        // if (!conversationSnapshot.exists()) {
+        //     conversationRef = ref(database, conversationRefPath2);
+        //     conversationRefPath = conversationRefPath2;
+        // }
 
         var conversationRefKey = push(child(conversationRef, 'conversations')).key;
-        conversationRef = ref(database, conversationRefPath+ '/' + conversationRefKey);
+        // conversationRef = ref(database, conversationRefPath + '/' + conversationRefKey);
 
-
-        set(conversationRef, {
+        set(child(conversationRef, '/' + conversationRefKey) , {
             sender: uid,
             message: message,
             timestamp: Date.now()
@@ -229,7 +226,7 @@ sendTextMessageBtn.on('click', async function (e) {
 //         var conversationRefKey = push(child(conversationRef, 'conversations')).key;
 //         conversationRef = ref(database, 'conversations/' + sender + '-' + uid + '/' + conversationRefKey);
 //     }
-    
+
 
 //     set(conversationRef, {
 //         sender: uid,
@@ -264,11 +261,11 @@ sendTextMessageBtn.on('click', async function (e) {
 //     // if (conversationSnapshot.exists()) {
 //     //     console.log(conversationSnapshot.val());
 //     // }
-    
+
 // })
 
 
-$('body').on('click','#sign-out',function(e){
+$('body').on('click', '#sign-out', function (e) {
     e.preventDefault();
     window.localStorage.removeItem('user');
     window.location.reload();
@@ -287,14 +284,18 @@ async function getUsersList() {
     }
 }
 
-async function loadConversations(uid) {
-    const conversationRef = ref(database, 'conversations');
-    const conversationSnapshot = await get(conversationRef);
-    if (conversationSnapshot.exists()) {
-        return conversationSnapshot.val();
-    }
-    return false;
-}
 
+
+async function loadMessages(sender, conversationSnapshot) {
+    $.each(conversationSnapshot, (index, val) => {
+        console.log({ index, val })
+        let className = (val.sender === sender) ? 'sender' : 'repaly';
+        let message = val.message;
+        msgBody.append(`<li class="${className}">
+                            <p>${message}</p>
+                            <span class="time">10:35 am</span>
+                        </li>`);
+    })
+}
 
 
